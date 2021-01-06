@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'memories_app',
     'social_django',
+    'memories_app',
 ]
 
-AUTHENTIFICATION_BACKENDS = [
+AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 ]
@@ -70,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+		'social_django.context_processors.backends',
+		'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -87,6 +89,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+#SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''
+#SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+
+#SOCIAL_AUTH_VK_OAUTH2_KEY= '7718883'
+#SOCIAL_AUTH_VK_OAUTH2_SECRET= 'ygjFZ91hm0NhRvXIkKxH'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '316245626355771'
+SOCIAL_AUTH_FACEBOOK_SECRET = '0be76d61a2a9bd71735bb1aaaf360165'
+
+#SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
