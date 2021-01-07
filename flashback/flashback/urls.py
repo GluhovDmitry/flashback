@@ -23,6 +23,7 @@ urlpatterns = [
     path('', views.home, name='home'), 
     path('login/', views.login, name='login'), 
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    #form for memory data
     #page for social authentication
     path('social-auth/', include('social_django.urls', namespace='social')), 
 ]

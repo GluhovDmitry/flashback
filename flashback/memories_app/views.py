@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 #def index(request):
 #	return render(request, 'index.html', {})
+def memory(request):
+	return render(request, 'memory.html', {})
 
 def login(request):
 	return render(request, 'login.html', {})

@@ -98,7 +98,15 @@ DATABASES = {
 
 SOCIAL_AUTH_FACEBOOK_KEY = '316245626355771'
 SOCIAL_AUTH_FACEBOOK_SECRET = '0be76d61a2a9bd71735bb1aaaf360165'
-
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['user_link']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+	'fields': 'id, name, link, picture.tupe(large)'
+}
+SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
+	('name', 'name'),
+	('picture', 'picture'),
+	('link','profile_url'),
+]
 #SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 LOGIN_URL = 'login'
