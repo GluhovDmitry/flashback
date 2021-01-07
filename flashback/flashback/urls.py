@@ -24,6 +24,7 @@ urlpatterns = [
     path('login/', views.login, name='login'), 
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     #form for memory data
+    path('memory/', views.memory, name = 'memory'),
     #page for social authentication
     path('social-auth/', include('social_django.urls', namespace='social')), 
 ]
