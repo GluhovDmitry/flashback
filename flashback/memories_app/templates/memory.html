@@ -25,12 +25,17 @@ src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab0
 		var map = new mapboxgl.Map({
 		container: 'map',
 		style: 'mapbox://styles/mapbox/streets-v11',
-     		center: [-77.03, 38.91],
-     		zoom: 9
+     		center: [60.61, 56.85],
+     		zoom: 8
 		});
+		map.on('click', function(e) {
+			var marker = new mapboxgl.Marker({draggable: true})
+			.setLngLat(e.lngLat)
+			.addTo(map);
+		});
+		
 	</script>
-	
 	<button>Сохранить</button>
-	<button>Удалить</button>
+	<button><a href="{% url 'home' %}">Отмена</button>
 	
 {% endblock %}
