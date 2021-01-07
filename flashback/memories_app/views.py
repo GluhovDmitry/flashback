@@ -7,7 +7,8 @@ from django.contrib.auth.decorators import login_required
 #def index(request):
 #	return render(request, 'index.html', {})
 def memory(request):
-	return render(request, 'memory.html', {})
+	mapbox_token = 'pk.eyJ1IjoiZGRkaW1hIiwiYSI6ImNram40dWo2NzJqcDkyeWxvZTNhbGxmc2UifQ.dtshxzx_TGEO_hl_1iN-7Q'
+	return render(request, 'memory.html', {'mapbox_token' : mapbox_token})
 
 def login(request):
 	return render(request, 'login.html', {})

@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+#    'django.contrib.gis',
     'social_django',
     'memories_app',
+#    'easy_maps',
+#    'djeym',
+
 ]
 
 AUTHENTICATION_BACKENDS = [
