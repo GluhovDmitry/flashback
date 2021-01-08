@@ -1,6 +1,7 @@
+
 {% block title %} Home page {% endblock %}
 {% block content %}
-<h1>you're at home buddy...</h1>
+<div>
 {% for item in backends.associated %}
 	{% if item.provider == 'facebook' %}
 		<div><img src="{{item.extra_data.picture.data.url}}" 
@@ -11,6 +12,14 @@ width="100" height="100">
 		</div>
 	{% endif %}
 {% endfor %}
-<button><a href="{% url 'memory' %}">add memory</button>
-<button><a href="{% url 'logout' %}">Logout</button>
+</div>
+
+<!-- <h1>You don't have any memories yet!</h1> -->
+{% for post in posts %}
+	<h1>post.description</h1>
+{% endfor %}
+
+<button><a href="{% url 'memory' %}">Add memory</a></button>
+<button><a href="{% url 'logout' %}">Logout</a></button>
+
 {% endblock %}

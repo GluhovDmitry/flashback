@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from .forms import PostForm
+from django.shortcuts import redirect
+from .models import Post
 #def description(request):
 #	return HttpResponse("This service is managed to keep your memories...")
 
@@ -8,7 +11,19 @@ from django.contrib.auth.decorators import login_required
 #	return render(request, 'index.html', {})
 def memory(request):
 	mapbox_token = 'pk.eyJ1IjoiZGRkaW1hIiwiYSI6ImNram40dWo2NzJqcDkyeWxvZTNhbGxmc2UifQ.dtshxzx_TGEO_hl_1iN-7Q'
-	return render(request, 'memory.html', {'mapbox_token' : mapbox_token})
+	if request.method == 'POST':
+		form = PostForm(request.POST)
+		if form.is_valid():
+			post = form.save()
+			post.author = request.user
+			post.save()
+			return redirect('memory_detail', pk=post.pk)
+	else: form = PostForm()
+	return render(request, 'memory.html', {'mapbox_token' : mapbox_token, 'form' : form})
+
+def memory_detail(request, pk):
+	post = get_object_or_404(Post, pk=pk)
+	return render(request, 'memory_detail.html', {'post': post})
 
 def login(request):
 	return render(request, 'login.html', {})

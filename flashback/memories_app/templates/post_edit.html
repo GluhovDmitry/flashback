@@ -1,8 +1,8 @@
 {% block title %} Memory creation {% endblock %}
 {% block content %}
-	<form method = "POST"> {% csrf_token %}
+	<form> {% csrf_token %}
 		{{ form.as_p }}
-	
+	</form>
 	<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'>
 	</script>
 	<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />	
@@ -25,5 +25,5 @@
 	</script>
 	<button>Сохранить</button>
 	<button><a href="{% url 'home' %}">Отмена</button>
-	</form>
+	
 {% endblock %}
