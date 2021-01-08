@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import PostForm
 from django.shortcuts import redirect
 from .models import Post
+from django.views.generic.list import ListView
 #def description(request):
 #	return HttpResponse("This service is managed to keep your memories...")
 
@@ -14,7 +15,7 @@ def memory(request):
 	if request.method == 'POST':
 		form = PostForm(request.POST)
 		if form.is_valid():
-			post = form.save()
+			post = form.save(commit=False)
 			post.author = request.user
 			post.save()
 			return redirect('memory_detail', pk=post.pk)
@@ -29,4 +30,5 @@ def login(request):
 	return render(request, 'login.html', {})
 @login_required
 def home(request):
-	return render(request, 'home.html', {})
+	posts = Post.objects.all()
+	return render(request, 'home.html', {'posts' : posts})

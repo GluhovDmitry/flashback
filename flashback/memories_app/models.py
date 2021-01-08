@@ -5,8 +5,4 @@ class Post(models.Model):
 	comment = models.TextField()
 	#longitude = models.CharField(max_length=10)
 	#latitude = models.CharField(max_length=10)
-def publish(self):
-	self.save()
 
-def __str__(self):
-	return self.description

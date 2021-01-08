@@ -15,10 +15,13 @@ width="100" height="100">
 </div>
 
 <!-- <h1>You don't have any memories yet!</h1> -->
-{% for post in posts %}
-	<h1>post.description</h1>
+{% for post in posts %}	
+	<p><a href="{% url 'memory_detail' pk=post.pk%}">
+		{{post.description}}
+	</a></p>
+{% empty %}
+	<p>У тебя нет воспоминаний!</p>
 {% endfor %}
-
 <button><a href="{% url 'memory' %}">Add memory</a></button>
 <button><a href="{% url 'logout' %}">Logout</a></button>
 
