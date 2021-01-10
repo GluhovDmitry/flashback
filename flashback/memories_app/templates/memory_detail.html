@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
 {% block content %}
 	<h1>{{ post.description }}</h1>
 	<h1>{{ post.comment }}</h1>
@@ -22,5 +24,6 @@
 		.setLngLat([lng,lat])
 		.addTo(map);		
 	</script>
-	<button><a href="/">Назад!</button>
+	{% bootstrap_button "Назад!" button_type='link' button_class="btn-primary" href="/"%}
+	<!--<button><a href="/">Назад!</button>-->
 {% endblock %}

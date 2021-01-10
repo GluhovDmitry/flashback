@@ -1,20 +1,21 @@
 
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
 {% block title %} Home page {% endblock %}
 {% block content %}
 <div>
 {% for item in backends.associated %}
 	{% if item.provider == 'facebook' %}
-		<div><img src="{{item.extra_data.picture.data.url}}" 
-width="100" height="100">
-		</div>
-		<div>
-			<h1>Hi, {{ item.extra_data.name}}!</h1>
+		<div float: left;><img src="{{item.extra_data.picture.data.url}}" 
+width="100" height="100" style="border-radius: 50%">
+			<h1>Вы вошли как: {{ item.extra_data.name}}</h1>
 		</div>
 	{% endif %}
 {% endfor %}
 </div>
 
-<!-- <h1>You don't have any memories yet!</h1> -->
+<p>Ваши воспоминания:</p> 
 {% for post in posts %}
 	{% ifequal post.author|stringformat:"s" user.username|stringformat:"s" %}
 	<p><a href="{% url 'memory_detail' pk=post.pk%}">
@@ -24,7 +25,9 @@ width="100" height="100">
 {% empty %}
 	<p>У тебя нет воспоминаний!</p>
 {% endfor %}
-<button><a href="{% url 'memory' %}">Add memory</a></button>
-<button><a href="{% url 'logout' %}">Logout</a></button>
+{% bootstrap_button "Add memory" button_type='link' button_class="btn-primary" href='memory'%}
+{% bootstrap_button "Logout" button_type='link' button_class="btn-primary" href='logout'%}
+<!--<button><a href="{% url 'memory' %}">Add memory</a></button>
+<button><a href="{% url 'logout' %}">Logout</a></button>-->
 
 {% endblock %}

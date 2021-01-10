@@ -34,13 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#    'django.contrib.gis',
     'social_django',
     'memories_app',
-#    'easy_maps',
-#    'yandex_maps',
-#    'geoposition',
-
+    'bootstrap4',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -101,7 +97,7 @@ GEOPOSITION_GOOGLE_MAPS_API_KEY =  'AIzaSyD0WBuj5gweITB4m_f_-EHeyUWvEWZAJmw'
 #SOCIAL_AUTH_VK_OAUTH2_KEY= '7718883'
 #SOCIAL_AUTH_VK_OAUTH2_SECRET= 'ygjFZ91hm0NhRvXIkKxH'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 SOCIAL_AUTH_FACEBOOK_KEY = '316245626355771'
 SOCIAL_AUTH_FACEBOOK_SECRET = '0be76d61a2a9bd71735bb1aaaf360165'

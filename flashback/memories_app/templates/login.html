@@ -1,5 +1,7 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
 {% block title %} Log in {% endblock %}
 {% block content %}
 <h1>let's log in...</h1>
-<button><a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a></button>
+<button class="btn btn-primary mb-2"><a href="{% url 'social:begin' 'facebook' %}" style="text-decoration: none; color: white;">Login with Facebook</a></button>
 {% endblock %}
