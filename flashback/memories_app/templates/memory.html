@@ -16,13 +16,29 @@
      		center: [60.61, 56.85],
      		zoom: 8
 		});
+		var lat = 0.0
+		var lng = 0.0
+		var count = 0;
 		map.on('click', function(e) {
-			var marker = new mapboxgl.Marker({draggable: true})
-			.setLngLat(e.lngLat)
-			.addTo(map);
+			if (count == 0){
+				var marker = new mapboxgl.Marker({draggable: true})
+				.setLngLat(e.lngLat)
+				.addTo(map);
+				lngLat = marker.getLngLat();
+				console.log(lngLat);
+				lat = lngLat.lat;
+				lng = lngLat.lng;
+				document.getElementById('lat').value = lat
+				document.getElementById('lng').value = lng
+				count++;
+			}
 		});
-		
+
+
+			
 	</script>
+	<input id="lat" name="lat">
+	<input id="lng" name="lng">	
 	<button>Сохранить</button>
 	<button><a href="{% url 'home' %}">Отмена</button>
 	</form>

@@ -1,5 +1,26 @@
 {% block content %}
 	<h1>{{ post.description }}</h1>
 	<h1>{{ post.comment }}</h1>
+	
+
+	<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'>
+	</script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />	
+	<div id='map' style='width: 400px; height: 300px;'>
+	</div>
+	<script>
+		mapboxgl.accessToken = '{{ mapbox_token }}';
+		var lng = {{post.lng}};
+     		var lat = {{post.lat}};
+		var map = new mapboxgl.Map({
+		container: 'map',
+		style: 'mapbox://styles/mapbox/streets-v11',
+     		center: [lng, lat],
+     		zoom: 8
+		});
+		var marker = new mapboxgl.Marker()
+		.setLngLat([lng,lat])
+		.addTo(map);		
+	</script>
 	<button><a href="/">Назад!</button>
 {% endblock %}
