@@ -5,11 +5,7 @@ from .forms import PostForm
 from django.shortcuts import redirect
 from .models import Post
 from django.views.generic.list import ListView
-#def description(request):
-#	return HttpResponse("This service is managed to keep your memories...")
 
-#def index(request):
-#	return render(request, 'index.html', {})
 def memory(request):
 	mapbox_token = 'pk.eyJ1IjoiZGRkaW1hIiwiYSI6ImNram40dWo2NzJqcDkyeWxvZTNhbGxmc2UifQ.dtshxzx_TGEO_hl_1iN-7Q'
 	if request.method == 'POST':
