@@ -1,0 +1,7 @@
+repo_token: r2MPLFsnL80GGdfKQha1mUv5L5NUdAp0r
+
+gem 'coveralls', require: false
+
+require 'coveralls'
+Coveralls.wear!
+
