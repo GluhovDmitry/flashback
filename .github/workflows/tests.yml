@@ -30,6 +30,7 @@ jobs:
       run: |
         cd flashback
         python manage.py test
+        cd -
     - name: Publish to coveralls.io
       uses: coverallsapp/github-action@v1.1.2
       with: 
