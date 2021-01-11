@@ -31,7 +31,6 @@ class TestModels(TestCase):
 			'lat':30.0,
 			'lng':20.0
 			})
-		print(Post.objects.get(pk=2).description)
 		self.assertEquals(response.status_code, 302)
 		self.assertEquals(Post.objects.count(), 2)
 		self.assertEquals(Post.objects.get(pk=2).description, 'desc_test')
