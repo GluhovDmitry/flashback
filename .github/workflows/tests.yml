@@ -28,5 +28,5 @@ jobs:
 
     - name: Test with unittest
       run: |
-        ls
-        python flashback/manage.py test
+        cd flashback
+        python manage.py test
