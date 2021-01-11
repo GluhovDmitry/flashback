@@ -28,4 +28,5 @@ jobs:
 
     - name: Test with unittest
       run: |
-        python manage.py test
+        ls
+        python flashback/manage.py test
