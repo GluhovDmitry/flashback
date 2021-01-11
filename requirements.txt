@@ -1,1 +1,2 @@
 Django==2.2.12
+social-auth-app-django
