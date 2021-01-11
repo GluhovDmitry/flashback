@@ -29,8 +29,8 @@ jobs:
     - name: Test with unittest
       run: |
         cd flashback
-        python manage.py test
-        cd -
+        coverage run --source='.' manage.py test 
+        coverage report
     - name: Publish to coveralls.io
       uses: coverallsapp/github-action@v1.1.2
       with: 
