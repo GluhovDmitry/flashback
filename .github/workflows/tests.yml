@@ -31,8 +31,12 @@ jobs:
         cd flashback
         coverage run --source='.' manage.py test 
         coverage report
-    - name: Publish to coveralls.io
-      uses: coverallsapp/github-action@v1.1.2
-      with: 
-        github-token: ${{ github.token }}
-        path-to-lcov: ".coverage"
+  finish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel-finished: true
