@@ -8,6 +8,12 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj-database-url
+
+db_from_env = dj-database-url.config()
+DATABASE['default'].update(db_from_env)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +28,7 @@ SECRET_KEY = 'o_&3#5p3p@h_l#x$3ep%%b-+lxp6cc2f0$^m%!3umrfy6g$aj@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
