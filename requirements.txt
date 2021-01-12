@@ -27,3 +27,4 @@ social-auth-app-django
 django-bootstrap4
 python-coveralls
 dj_database_url
+gunicorn
