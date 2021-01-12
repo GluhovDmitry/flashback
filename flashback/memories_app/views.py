@@ -7,6 +7,8 @@ from .models import Post
 from django.views.generic.list import ListView
 
 
+def privacy_policy(request):
+	return render(request, 'privacy_policy.html', {})
 def login(request):
 	return render(request, 'login.html', {})
 @login_required
