@@ -1,1 +1,1 @@
-web: gunicorn flashback.wsgi --log-file -
+web: gunicorn flashback.flashback.wsgi --log-file -
