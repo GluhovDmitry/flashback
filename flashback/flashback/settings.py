@@ -11,7 +11,7 @@ import os
 import dj_database_url
 
 db_from_env = dj_database_url.config()
-DATABASE['default'].update(db_from_env)
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -93,7 +93,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+DATABASE['default'].update(db_from_env)
 
 SOCIAL_AUTH_FACEBOOK_KEY = '316245626355771'
 SOCIAL_AUTH_FACEBOOK_SECRET = '0be76d61a2a9bd71735bb1aaaf360165'
