@@ -22,7 +22,7 @@ six==1.14.0
 urllib3==1.25.8
 webencodings==0.5.1
 psycopg2==2.8.6
-Django==2.2.12
+django==2.2.12
 social-auth-app-django
 django-bootstrap4
 python-coveralls
