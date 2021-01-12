@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-import dj_database_url
+import dj-database-url
 
 db_from_env = dj-database-url.config()
 DATABASE['default'].update(db_from_env)
