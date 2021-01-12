@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'flashback.urls'
+ROOT_URLCONF = 'flashback.flashback.urls'
 
 TEMPLATES = [
     {
