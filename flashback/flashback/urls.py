@@ -28,6 +28,6 @@ urlpatterns = [
     path('memory/<int:pk>/', views.memory_detail, name='memory_detail'),
     #page for social authentication
     path('social-auth/', include('social_django.urls', namespace='social')),
-    path('privacy-policy/', views.privacy_policy, name=privacy_policy) 
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'), 
 ] 
 
