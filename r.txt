@@ -2,3 +2,4 @@ Django==2.2.12
 social-auth-app-django
 django-bootstrap4
 python-coveralls
+dj_database_url
